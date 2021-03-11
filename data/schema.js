@@ -1,15 +1,7 @@
 import { makeExecutableSchema } from 'graphql-tools';
 import { resolvers } from './resolvers';
-
-const typeDefs = `
-  
-  type Page {
-
-  }
-  type Search {
-
-  }
-  type page
+import { TYPE_DEFINITION } from './config'
+const typeDefs = TYPE_DEFINITION + `
   type Languges{
     langauge:[Language]
   }
@@ -27,9 +19,8 @@ const typeDefs = `
 
   type Query {
     getLanguges:Languages
-    getSearchData(language:String):[Search]
-    getPageData(i:ID, language:String):[Page]
-    getNavigation(language:String)
+    getPage(i:ID, languageCodeName:String):ProductOverviewContentType
+    getNavigation(languageCodeName:String):[NavigationItemContentType]
   }
 
   input SearchInput{

@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon ./index.js --exec babel-node -e js"
+    "start": "nodemon ./index.js --exec babel-node -e js",
+    "createSchema": ". ./.env && kontent-generate-gql-schema --projectId ${KONTENT_ID} --createModule --outputFile ./data/config.js"
   },
   "author": "",
   "license": "ISC",

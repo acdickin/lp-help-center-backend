@@ -4,15 +4,8 @@ import { schema } from './data/schema';
 
 const app = express();
 
-const res = await axios.get(`https://manage.kontent.ai/v2/projects/${process.env.KONTENT_ID}/languages`, {
-  headers: {
-    'Authorization': ` bearer ${process.env.KONTENT_TOKEN}`,
-    'Content-type': 'application/json'
-  }
-});
-(``)
 app.get('/', (req, res) => {
-  res.send('Graphql is amazing!');
+  res.send('Welcome to help center backend');
 });
 
 app.use('/graphql', graphqlHTTP({

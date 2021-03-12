@@ -754,6 +754,15 @@
   dependencies:
     axios "0.21.1"
 
+"@kentico/kontent-delivery@^10.3.0":
+  version "10.3.0"
+  resolved "http://tlvmvnrepository:80/artifactory/api/npm/lp-npm-virtual/@kentico/kontent-delivery/-/kontent-delivery-10.3.0.tgz#2221aae0915d8a1a40a0600504159620c9969d09"
+  integrity sha1-IiGq4JFdihpAoGAFBBWWIMmWnQk=
+  dependencies:
+    "@kentico/kontent-core" "8.1.0"
+    parse5 "6.0.1"
+    reflect-metadata "0.1.13"
+
 "@kentico/kontent-management@^0.4.8":
   version "0.4.8"
   resolved "http://tlvmvnrepository:80/artifactory/api/npm/lp-npm-virtual/@kentico/kontent-management/-/kontent-management-0.4.8.tgz#983f8d720e39185807ba54fc3dff10a4bfe561e3"
@@ -988,7 +997,7 @@ atob@^2.1.2:
   resolved "http://tlvmvnrepository:80/artifactory/api/npm/lp-npm-virtual/atob/-/atob-2.1.2.tgz#6d9517eb9e030d2436666651e86bd9f6f13533c9"
   integrity sha1-bZUX654DDSQ2ZmZR6GvZ9vE1M8k=
 
-axios@0.21.1, axios@^0.21.1:
+axios@0.21.1:
   version "0.21.1"
   resolved "http://tlvmvnrepository:80/artifactory/api/npm/lp-npm-virtual/axios/-/axios-0.21.1.tgz#22563481962f4d6bde9a76d516ef0e5d3c09b2b8"
   integrity sha1-IlY0gZYvTWvemnbVFu8OXTwJsrg=
@@ -2337,9 +2346,9 @@ ee-first@1.1.1:
   integrity sha1-WQxhFWsK4vTwJVcyoViyZrxWsh0=
 
 electron-to-chromium@^1.3.47, electron-to-chromium@^1.3.649:
-  version "1.3.684"
-  resolved "http://tlvmvnrepository:80/artifactory/api/npm/lp-npm-virtual/electron-to-chromium/-/electron-to-chromium-1.3.684.tgz#053fbb0a4b2d5c076dfa6e1d8ecd06a3075a558a"
-  integrity sha1-BT+7CkstXAdt+m4djs0GowdaVYo=
+  version "1.3.686"
+  resolved "http://tlvmvnrepository:80/artifactory/api/npm/lp-npm-virtual/electron-to-chromium/-/electron-to-chromium-1.3.686.tgz#6c5bea31e463c45509b5a0c551b414bb4897cff0"
+  integrity sha1-bFvqMeRjxFUJtaDFUbQUu0iXz/A=
 
 emoji-regex@^7.0.1:
   version "7.0.3"
@@ -3853,6 +3862,11 @@ parse-glob@^3.0.4:
     is-extglob "^1.0.0"
     is-glob "^2.0.0"
 
+parse5@6.0.1:
+  version "6.0.1"
+  resolved "http://tlvmvnrepository:80/artifactory/api/npm/lp-npm-virtual/parse5/-/parse5-6.0.1.tgz#e1a1c085c569b3dc08321184f19a39cc27f7c30b"
+  integrity sha1-4aHAhcVps9wIMhGE8Zo5zCf3wws=
+
 parseurl@~1.3.3:
   version "1.3.3"
   resolved "http://tlvmvnrepository:80/artifactory/api/npm/lp-npm-virtual/parseurl/-/parseurl-1.3.3.tgz#9da19e7bee8d12dff0513ed5b76957793bc2e8d4"
@@ -4058,6 +4072,11 @@ readdirp@~3.5.0:
   dependencies:
     picomatch "^2.2.1"
 
+reflect-metadata@0.1.13:
+  version "0.1.13"
+  resolved "http://tlvmvnrepository:80/artifactory/api/npm/lp-npm-virtual/reflect-metadata/-/reflect-metadata-0.1.13.tgz#67ae3ca57c972a2aa1642b10fe363fe32d49dc08"
+  integrity sha1-Z648pXyXKiqhZCsQ/jY/4y1J3Ag=
+
 regenerate@^1.2.1:
   version "1.4.2"
   resolved "http://tlvmvnrepository:80/artifactory/api/npm/lp-npm-virtual/regenerate/-/regenerate-1.4.2.tgz#b9346d8827e8f5a32f7ba29637d398b69014848a"
@@ -4237,6 +4256,13 @@ run-parallel@^1.1.9:
   integrity sha1-ZtE2jae9+SHrnZW9GpIp5/IaQ+4=
   dependencies:
     queue-microtask "^1.2.2"
+
+rxjs@^6.6.6:
+  version "6.6.6"
+  resolved "http://tlvmvnrepository:80/artifactory/api/npm/lp-npm-virtual/rxjs/-/rxjs-6.6.6.tgz#14d8417aa5a07c5e633995b525e1e3c0dec03b70"
+  integrity sha1-FNhBeqWgfF5jOZW1JeHjwN7AO3A=
+  dependencies:
+    tslib "^1.9.0"
 
 safe-buffer@5.1.2, safe-buffer@~5.1.0, safe-buffer@~5.1.1:
   version "5.1.2"
@@ -4600,7 +4626,7 @@ ts-invariant@^0.6.0:
     "@ungap/global-this" "^0.4.2"
     tslib "^1.9.3"
 
-tslib@^1.10.0, tslib@^1.14.1, tslib@^1.9.3:
+tslib@^1.10.0, tslib@^1.14.1, tslib@^1.9.0, tslib@^1.9.3:
   version "1.14.1"
   resolved "http://tlvmvnrepository:80/artifactory/api/npm/lp-npm-virtual/tslib/-/tslib-1.14.1.tgz#cf2d38bdc34a134bcaf1091c41f6619e2f672d00"
   integrity sha1-zy04vcNKE0vK8QkcQfZhni9nLQA=

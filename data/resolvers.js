@@ -1,35 +1,29 @@
 import axios from "axios"
+import { getPageResolver, getNavigationResolver } from "../delivery"
+import dotenv from "dotenv";
 
+dotenv.config();
 
 export const resolvers = {
   Query: {
-    getLanguges: () => {
-      await axios.get(`https://manage.kontent.ai/v2/projects/${process.env.KONTENT_ID}/languages`, {
+    getLanguages: () => {
+      return axios.get(`https://manage.kontent.ai/v2/projects/${process.env.KONTENT_ID}/languages`, {
         headers: {
           'Authorization': ` bearer ${process.env.KONTENT_TOKEN}`,
           'Content-type': 'application/json'
         }
       })
-        .then(res => resolve(res.data))
-        .catch(err => console.log(err))
+        .then(res => res.data).catch(err => console.log(err))
     },
-    getNavigation: (languageCodeName) => {
-      await axios.get(`https://deliver.kontent.ai/${process.env.KONTENT_ID}/
-      items?language=${languageCodeName}&items.system.language[eq]=${languageCodeName}
-      &depth=5&elements.title[eq]=root`)
-        .then(res => resolve(res.data))
-        .catch(err => console.log(err))
+    getNavigation: (root, { languageCodeName }) => {
+      return getNavigationResolver(languageCodeName);
     },
-    getPage: (id, languageCodeName) => {
-      await axios.get(`https://deliver.kontent.ai/${process.env.KONTENT_ID}/
-      items?language=${languageCodeName}&items.system.language[eq]=${languageCodeName}
-      &system.id[eq]=${id}`)
-        .then(res => resolve(res.data))
-        .catch(err => console.log(err))
+    getPage: (root, { id, languageCodeName }) => {
+      return getPageResolver(id, languageCodeName);
     },
   },
-  Mutation: {
-    //pass the data from kontent to algolia
-    // sendAlgoliaData: await axios.
-  }
+  // Mutation: {
+  //   //pass the data from kontent to algolia
+  //   // sendAlgoliaData: await axios.
+  // }
 }

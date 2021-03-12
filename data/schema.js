@@ -2,32 +2,24 @@ import { makeExecutableSchema } from 'graphql-tools';
 import { resolvers } from './resolvers';
 import { TYPE_DEFINITION } from './config'
 const typeDefs = TYPE_DEFINITION + `
-  type Languges{
-    langauge:[Language]
+  type Languages{
+    languages:[LanguageModel]
   }
-
-  type Language {
+  type FallbackLanguage{
+    id: ID
+  }
+  type LanguageModel {
     id: ID
     name: String
     codename: String
     is_active: Boolean
     is_default: Boolean
-    fallback_language: {
-      id: ID
-    }
+    fallback_language: FallbackLanguage
   }
-
   type Query {
-    getLanguges:Languages
-    getPage(i:ID, languageCodeName:String):ProductOverviewContentType
+    getLanguages:Languages
+    getPage(id:ID,languageCodeName:String):ProductOverviewContentType
     getNavigation(languageCodeName:String):[NavigationItemContentType]
-  }
-
-  input SearchInput{
-    
-  }
-  type Mutation {
-    createSearchData(SearchInput):
   }
 `
 

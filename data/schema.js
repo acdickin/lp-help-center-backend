@@ -19,7 +19,7 @@ const typeDefs = TYPE_DEFINITION + `
   type Query {
     getLanguages:Languages
     getPage(id:ID,languageCodeName:String):ProductOverviewContentType
-    getNavigation(languageCodeName:String):[NavigationItemContentType]
+    getNavigation(languageCodeName:String): [ContentItem]
   }
 `
 

@@ -5,6 +5,17 @@ import dotenv from "dotenv";
 dotenv.config();
 
 export const resolvers = {
+  ContentItem: {
+    __resolveType: (obj, context, info) => {
+      if (obj.subitems) {
+        return "NavigationItemContentType"
+      }
+      if (obj.why_the_product_is_useful) {
+        return "ProductOverviewContentType"
+      }
+      return null
+    }
+  },
   Query: {
     getLanguages: () => {
       return axios.get(`https://manage.kontent.ai/v2/projects/${process.env.KONTENT_ID}/languages`, {

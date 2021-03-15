@@ -763,13 +763,6 @@
     parse5 "6.0.1"
     reflect-metadata "0.1.13"
 
-"@kentico/kontent-management@^0.4.8":
-  version "0.4.8"
-  resolved "http://tlvmvnrepository:80/artifactory/api/npm/lp-npm-virtual/@kentico/kontent-management/-/kontent-management-0.4.8.tgz#983f8d720e39185807ba54fc3dff10a4bfe561e3"
-  integrity sha1-mD+Ncg45GFgHulT8Pf8QpL/lYeM=
-  dependencies:
-    "@kentico/kontent-core" "8.1.0"
-
 "@nodelib/fs.scandir@2.1.4":
   version "2.1.4"
   resolved "http://tlvmvnrepository:80/artifactory/api/npm/lp-npm-virtual/@nodelib/fs.scandir/-/fs.scandir-2.1.4.tgz#d4b3549a5db5de2683e0c1071ab4f140904bbf69"

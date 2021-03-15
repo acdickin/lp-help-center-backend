@@ -16,6 +16,7 @@ function getPageResolver(id, languageCodeName) {
     .equalsFilter("system.id", id)
     .toPromise()
     .then((response) => {
+      // console.log(response.items[0])
       return (response.items[0]);
     }, err => console.log(err));
 }
@@ -28,6 +29,7 @@ function getNavigationResolver(languageCodeName) {
     .equalsFilter("elements.title", 'root')
     .toPromise()
     .then((response) => {
+      // console.log(response.items[0].subitems.value)
       return (response.items[0].subitems.value)
     },
       (err => err));

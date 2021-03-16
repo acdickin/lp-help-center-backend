@@ -16,6 +16,9 @@ const typeDefs = TYPE_DEFINITION + `
     is_default: Boolean
     fallback_language: FallbackLanguage
   }
+  input LanguageFilter {
+     is_active: Boolean
+  }
   type Query {
     getLanguages:Languages
     getPage(id:ID,languageCodeName:String):ProductOverviewContentType

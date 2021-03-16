@@ -1,3 +1,5 @@
+import axios from 'axios'
+
 require("dotenv").config({
   path: `./.env`,
 })
@@ -46,5 +48,15 @@ function getAllPagesResolver(languageCodeName) {
       (err => err));
 }
 
+const getAllLanguages = () => {
+  return axios.get(`https://manage.kontent.ai/v2/projects/${process.env.KONTENT_ID}/languages`, {
+    headers: {
+      'Authorization': ` bearer ${process.env.KONTENT_TOKEN}`,
+      'Content-type': 'application/json'
+    }
+  }).then(res => {
+    return res.data
+  }).catch(err => console.log(err))
+}
 
-export { getPageResolver, getNavigationResolver, getAllPagesResolver } 
+export { getPageResolver, getNavigationResolver, getAllPagesResolver, getAllLanguages }

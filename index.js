@@ -1,8 +1,10 @@
 import express from 'express';
 import { graphqlHTTP } from 'express-graphql';
 import { schema } from './data/schema';
-import { getAllPagesResolver } from './delivery'
+import { getAllPagesResolver, getAllLanguages } from './delivery'
 import algoliasearch from 'algoliasearch';
+
+
 require("dotenv").config({
   path: `./.env`,
 })
@@ -20,20 +22,28 @@ app.use('/graphql', graphqlHTTP({
   graphiql: true,
 }));
 
+
+
 function updateAlgolia() {
-  // TODO make this a batch job/only grab ones that updated lately
-  getAllPagesResolver('en').then((allPages) => {
-    const data = allPages.map(page => {
-      return pagetoAlgoliaRecord(page)
+  // TODO instead get the list of items from the nav(so we dont add extra pages)
+  // get all languages
+  getAllLanguages().then(all => {
+    all.languages.forEach(lang => {
+      if (lang.is_active) {
+        getAllPagesResolver(lang.codename).then((allPages) => {
+          const data = allPages.map(page => {
+            return pagetoAlgoliaRecord(page)
+          })
+          //pushes changes to algolia
+          index.partialUpdateObjects(data, {
+            createIfNotExists: true
+          })
+        })
+      }
     })
-    index.saveObjects(data)
   })
-}
+  // TODO make this a batch job/only grab ones that updated lately
 
-const removeTags = (html) => {
-  // removes html tags so there is only text
-
-  return html.replace(/(<([^>]+)>)/ig, '').replace('&nbsp;', ' ');
 }
 
 const pagetoAlgoliaRecord = (item) => {
@@ -51,6 +61,11 @@ const pagetoAlgoliaRecord = (item) => {
     url: url.value,
     why_the_product_is_useful: removeTags(why_the_product_is_useful.value)
   }
+}
+
+const removeTags = (html) => {
+  // removes html tags so there is only text
+  return html.replace(/(<([^>]+)>)/ig, '').replace(/\&nbsp;/ig, ' ');
 }
 
 updateAlgolia()

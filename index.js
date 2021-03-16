@@ -42,8 +42,6 @@ function updateAlgolia() {
       }
     })
   })
-  // TODO make this a batch job/only grab ones that updated lately
-
 }
 
 const pagetoAlgoliaRecord = (item) => {

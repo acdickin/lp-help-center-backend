@@ -33,7 +33,7 @@ function getNavigationResolver(languageCodeName) {
       (err => err));
 
 }
-function getAllPages(languageCodeName) {
+function getAllPagesResolver(languageCodeName) {
   return deliveryClient
     .items()
     .type('product_overview')
@@ -47,4 +47,4 @@ function getAllPages(languageCodeName) {
 }
 
 
-export { getPageResolver, getNavigationResolver, getAllPages } 
+export { getPageResolver, getNavigationResolver, getAllPagesResolver } 

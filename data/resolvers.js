@@ -1,5 +1,5 @@
 import axios from "axios"
-import { getPageResolver, getNavigationResolver } from "../delivery"
+import { getPageResolver, getNavigationResolver, getAllPagesResolver } from "../delivery"
 import dotenv from "dotenv";
 
 dotenv.config();

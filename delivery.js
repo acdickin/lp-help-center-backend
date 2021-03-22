@@ -8,7 +8,6 @@ const KontentDelivery = require('@kentico/kontent-delivery');
 
 const deliveryClient = new KontentDelivery.DeliveryClient({
   projectId: process.env.KONTENT_ID,
-
 });
 function getPageResolver(id, languageCodeName) {
   return deliveryClient

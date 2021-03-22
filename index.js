@@ -3,13 +3,14 @@ import { graphqlHTTP } from 'express-graphql';
 import { schema } from './data/schema';
 import { getAllPagesResolver, getAllLanguages } from './delivery'
 import algoliasearch from 'algoliasearch';
-
+import cors from 'cors';
 
 require("dotenv").config({
   path: `./.env`,
 })
 
 const app = express();
+app.use(cors());
 
 const algoliaClient = algoliasearch(process.env.AGOLIA_ID, process.env.ALGOLIA_KEY);
 const index = algoliaClient.initIndex(process.env.ALGOLIA_INDEX);

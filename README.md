@@ -2,7 +2,7 @@
 
 Backend for help center. It leverages express and graphql to serve kontent data
 This project also updates agolia search data
-
+[lp-help-center](https://github.com/acdickin/lp-help-center)
 ## Available Scripts
 In the project directory, you can run:
 ## `yarn`

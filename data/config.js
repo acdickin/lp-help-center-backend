@@ -96,6 +96,11 @@ type CustomElement {
   value: String
 }
 
+type ChatVsMessagingContentType implements ContentItem {
+  system: SystemInfo!
+  chat_messaging: MultipleChoiceElement
+}
+
 type CodeSampleContentType implements ContentItem {
   system: SystemInfo!
   code: TextElement
@@ -137,6 +142,20 @@ type HowToAccessCbContentType implements ContentItem {
   system: SystemInfo!
   untitled_text: TextElement
   untitled_text_94676de: TextElement
+}
+
+type KcProductOverviewContentType implements ContentItem {
+  system: SystemInfo!
+  how_it_works: RichTextElement
+  missing_something__missing_something_text: RichTextElement
+  benefits: RichTextElement
+  title: TextElement
+  chat_messaging__chat_vs_messaging: MultipleChoiceElement
+  introduction: RichTextElement
+  use_cases: RichTextElement
+  missing_something__missing_something_: TextElement
+  key_components: RichTextElement
+  next_steps__next_steps: RichTextElement
 }
 
 type LandingPageExampleContentTypeContentType implements ContentItem {
@@ -181,10 +200,12 @@ type ProductOverviewContentType implements ContentItem {
   system: SystemInfo!
   body: RichTextElement
   title: TextElement
+  meta_description: TextElement
   why_the_product_is_useful: RichTextElement
   post_tags: TaxonomyElement
   untitled_linked_items: LinkedItemsElement
   url: UrlSlugElement
+  meta_keywords: TextElement
   product_description: RichTextElement
 }
 

@@ -5,7 +5,7 @@ This project also updates agolia search data
 [lp-help-center](https://github.com/acdickin/lp-help-center)
 
 ## How to run help center
-[How to run help center] (https://docs.google.com/document/d/1hTT515G5AwE3rLbHW1fIIhcAsyjHYNbvaKnQWeH23I4/)
+[How to run help center](https://docs.google.com/document/d/1hTT515G5AwE3rLbHW1fIIhcAsyjHYNbvaKnQWeH23I4/)
 
 ## Available Scripts
 In the project directory, you can run:

@@ -2,7 +2,7 @@
 
 Backend for help center. It leverages express and graphql to serve kontent data
 This project also updates agolia search data
-[lp-help-center](https://github.com/acdickin/lp-help-center)
+[lp-help-center](https://github.com/LivePersonInc/lp-help-center)
 
 ## How to run help center locally
 [How to run help center](https://docs.google.com/document/d/1hTT515G5AwE3rLbHW1fIIhcAsyjHYNbvaKnQWeH23I4/)
